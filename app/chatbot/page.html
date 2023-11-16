@@ -1,0 +1,35 @@
+<html>
+    <script src="https://cdn.botpress.cloud/webchat/v0/inject.js"></script>
+
+    <script>
+        window.botpressWebChat.init({
+            "botId": "9a57e8ad-ae39-4b86-9337-84680f2ced05",
+        "clientId": "9a57e8ad-ae39-4b86-9337-84680f2ced05",
+
+        // Set the URL for the Botpress WebChat JavaScript file and the messaging server
+        "hostUrl": "https://cdn.botpress.cloud/webchat/v0",
+        "messagingUrl": "https://messaging.botpress.cloud",
+
+        // Set the name of the bot that will be displayed in the WebChat interface
+        "botName": "Teaching buddy",
+
+        // Set the width of the WebChat container and layout to 100% (Full Screen)
+        "containerWidth": "100%25",
+        "layoutWidth": "100%25",
+
+        // Hide the widget and disable animations
+        "hideWidget": true,
+        "disableAnimations": true,
+    });
+
+        // Opens up the Chatbot by default
+        // This lets users start chatting with the Chatbot without needing to click any buttons or menus.
+        window.botpressWebChat.onEvent(
+        function () {
+            window.botpressWebChat.sendEvent({ type: "show" });
+        },
+        ["LIFECYCLE.LOADED"]
+        );
+    </script>
+
+</html>
